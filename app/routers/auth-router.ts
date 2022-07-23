@@ -14,3 +14,5 @@ const authRouter = Router()
 
 
 authRouter.post('/signin', validationSchemaMiddleware(signinSchema),  SigninController)
+
+export default authRouter
