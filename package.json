@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "ts-node app/index.ts",
+    "dev": "tsnd app/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,7 +18,7 @@
     "@types/dotenv": "^8.2.0",
     "@types/node": "^18.0.6",
     "prisma": "^4.1.0",
-    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.7.4"
   },
   "dependencies": {

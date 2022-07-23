@@ -1,11 +1,11 @@
 import { ErrorRequestHandler, Request, Response, NextFunction } from "express";
 
 interface ErrorResponse {
-  status: number
+  statusCode: number
   message: string
 }
 
 export default (error: ErrorResponse, req: Request, res: Response, next: NextFunction) => {
   console.log(error)
-  res.status(error.status).json({ error: error.message })
+  res.status(error.statusCode || 500).json({ error: error.message || 'internal server error' })
 }
