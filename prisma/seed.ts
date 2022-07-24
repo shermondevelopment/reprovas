@@ -7,7 +7,6 @@ async function main() {
   const SALT = 10
   const hashedPassword = bcrypt.hashSync('teste@teste', SALT)
 
-  console.log(hashedPassword)
 
   await prisma.user.createMany({
     data: [
