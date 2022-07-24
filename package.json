@@ -16,10 +16,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
     "@prisma/client": "^4.1.0",
     "@types/cors": "^2.8.12",
     "@types/dotenv": "^8.2.0",
     "@types/jest": "^28.1.6",
+    "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^18.0.6",
     "dotenv-cli": "^6.0.0",
     "jest": "^28.1.3",

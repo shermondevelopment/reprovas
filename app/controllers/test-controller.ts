@@ -8,5 +8,5 @@ export const NewTestController = async (req: Request, res: Response) => {
 
   const addTest = await NewTestService(testData)
 
-  res.status(200).json(addTest)
+  res.status(201).json(addTest)
 }
