@@ -13,7 +13,7 @@ export const createTest =  async (test: TestRequest) => {
   })
 }
 
-export async function findByTestToDiscipline() {
+export const findByTestToDiscipline = async () => {
   const result = await prisma.term.findMany({
     select: {
       number: true,
@@ -42,4 +42,35 @@ export async function findByTestToDiscipline() {
     },
   })
   return result
+}
+
+export const  findByTestToTeacher = async () => {
+  const test = await prisma.teacher.findMany({
+    select: {
+      id: true,
+      name: true,
+      TeacherDiscipline: {
+        select: {
+          discipline: {
+            select: {
+              name: true,
+              term: { select: {number: true} }
+            }
+          },
+          Test: {
+            select: {
+              name: true,
+              uri: true,
+              category: {
+                select: {
+                  name: true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  })
+  return test
 }

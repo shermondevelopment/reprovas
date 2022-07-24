@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import {  Test } from '@prisma/client'
-import { NewTestService, TestRequest, findByTestToDisciplineService } from '../services/test-service'
+import { NewTestService, TestRequest, findByTestToDisciplineService, findByTestToTeacherService } from '../services/test-service'
 
 
 export const NewTestController = async (req: Request, res: Response) => {
@@ -16,3 +16,8 @@ export const SearchTestByDisciplineController = async (req: Request, res: Respon
 
   res.status(200).json(testByDiscipline)
 } 
+
+export const SearchTestByTeacherController = async (req: Request, res: Response) => {
+  const testByTeacher = await findByTestToTeacherService()
+  res.status(200).json(testByTeacher)
+}
