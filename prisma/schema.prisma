@@ -18,3 +18,61 @@ model User {
 
   @@map("users")
 }
+
+model Category {
+  id         String   @id @default(uuid())
+  name       String
+  created_at DateTime @default(now())
+  Test       Test[]
+
+  @@map("category")
+}
+
+model Teacher {
+  id                String              @id @default(uuid())
+  name              String
+  TeacherDiscipline TeacherDiscipline[]
+
+  @@map("teacher")
+}
+
+model Term {
+  id         String       @id @default(uuid())
+  number     Int          @unique
+  Discipline Discipline[]
+
+  @@map("term")
+}
+
+model Discipline {
+  id                String              @id @default(uuid())
+  name              String
+  term_id           String
+  term              Term                @relation(fields: [term_id], references: [id])
+  TeacherDiscipline TeacherDiscipline[]
+
+  @@map("discipline")
+}
+
+model TeacherDiscipline {
+  id            String     @id @default(uuid())
+  teacher_id    String
+  discipline_id String
+  teacher       Teacher    @relation(fields: [teacher_id], references: [id])
+  discipline    Discipline @relation(fields: [discipline_id], references: [id])
+  Test          Test[]
+
+  @@map("teacher_discipline")
+}
+
+model Test {
+  id                    String            @id @default(uuid())
+  name                  String
+  uri                   String
+  category_id           String
+  teacher_discipline_id String
+  category              Category          @relation(fields: [category_id], references: [id])
+  teacherDisicpline     TeacherDiscipline @relation(fields: [teacher_discipline_id], references: [id])
+
+  @@map("test")
+}
