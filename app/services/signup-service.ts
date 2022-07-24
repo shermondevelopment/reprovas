@@ -1,8 +1,8 @@
 /** repository */
-import { createUser, findByEmail } from '../../repositorys/auth-repository'
+import { createUser, findByEmail } from '../repositorys/auth-repository'
 
 /** error handle */
-import { AppErrorResponse } from '../../utils/app-error-response'
+import { AppErrorResponse } from '../utils/app-error-response'
 
 /** bcrypt */
 import bcrypt from 'bcrypt'
