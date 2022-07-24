@@ -90,4 +90,9 @@ describe('Test', () => {
     expect(response.status).toBe(200)
   })
 
+  it('should call router /test-to-teacher with valid token and receive status 200', async () => {
+    const response = await supertest(app).get('/test-to-teacher').set('Authorization', `Bearer ${generateToken().token}`)
+    expect(response.status).toBe(200)
+  })
+
 })
