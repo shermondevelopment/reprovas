@@ -2,7 +2,7 @@ import { findByCategory } from "../repositorys/category-repository"
 import { findByDiscipline } from "../repositorys/discipline-repository"
 import { findTeachAndDisciplineById } from "../repositorys/teacher-discipline-repository"
 import { findByTeacher } from "../repositorys/teacher-repository"
-import { createTest } from "../repositorys/test-repository"
+import { createTest, findByTestToDiscipline } from "../repositorys/test-repository"
 import { AppErrorResponse } from "../utils/app-error-response"
 
 export interface TestRequest {
@@ -33,5 +33,13 @@ export const NewTestService = async (test: TestRequest) => {
 
   return await createTest({ name, uri, category_id, teacher_discipline_id})
 
+
+}
+
+export const findByTestToDisciplineService = async () => {
+
+  const disciplines = await findByTestToDiscipline()
+
+  return disciplines
 
 }

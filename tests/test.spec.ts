@@ -85,4 +85,9 @@ describe('Test', () => {
     expect(response.status).toBe(422)
   })
 
+  it('should call router /test-to-discipline with valid token and receive status 200', async () => {
+    const response = await supertest(app).get('/test-to-discipline').set('Authorization', `Bearer ${generateToken().token}`)
+    expect(response.status).toBe(200)
+  })
+
 })
