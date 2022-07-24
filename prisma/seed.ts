@@ -49,6 +49,7 @@ async function main() {
   await prisma.discipline.createMany({
     data: [
       { 
+        id: '8fd431c3-5d24-455b-8f81-7de6247e949b',
         name: 'HTML e CSS', 
         term_id: '08151c6d-9187-42d0-aced-dcbb2b4fa9bd'  
       }
@@ -65,6 +66,11 @@ async function main() {
 
   await prisma.teacherDiscipline.createMany({
     data: [
+      {
+        id: '89f56120-56e7-444e-9342-8de6c6f792d6',
+        teacher_id: 'e8617cd5-03f9-4d18-86f0-17bb6fa3a40f',
+        discipline_id: '8fd431c3-5d24-455b-8f81-7de6247e949b'
+      },
       {
         id: '89f56120-56e7-444e-9342-8de6c6f792d6',
         teacher_id: 'e8617cd5-03f9-4d18-86f0-17bb6fa3a40f',
