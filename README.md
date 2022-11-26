@@ -4,10 +4,7 @@
    <img src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/55629/card-file-box-emoji-clipart-xl.png" width="150"/>
 </p>
 
-<p align = "center">
-   <img src="https://img.shields.io/badge/author-Fernanda-4dae71?style=flat-square" />
-   <img src="https://img.shields.io/github/languages/count/acfernanda/repoprovas-api?color=4dae71&style=flat-square" />
-</p>
+
 
 ## :clipboard: Description
 
